@@ -26,7 +26,11 @@ jobs:
       with:
         name: webapp
         path: /:
-   
+   - name: routes_location
+     uses: actions/upload-artifact@master
+      with:
+        name: webapp
+        path: /:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
